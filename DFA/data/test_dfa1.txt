@@ -1,0 +1,9 @@
+Name: m1
+Alphabet: a b
+States: q1 q2 q3
+Start: q1
+Accept: q2
+Transition_Table:
+(q2) (q1)
+(q3) (q3)
+(q2) (q1)

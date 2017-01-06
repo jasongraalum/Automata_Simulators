@@ -19,7 +19,10 @@ all: DFA_Simulator
 common: $(COMMON_OBJS) $(COMMON_DIR)/include/common.h
 	cd $(COMMON_DIR); make ; cd $(LWD)
 
-DFA_Simulator: $(SRC_DIR)/DFA.cpp $(INCLUDE_DIR)/DFA.h
+DFA_Simulator: $(BIN_DIR)/DFA_Simulator
+
+$(BIN_DIR)/DFA_Simulator: $(SRC_DIR)/DFA.cpp $(INCLUDE_DIR)/DFA.h
+	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) $(TEST_DIR)/DFA_Simulator.cpp $(DFA_SRC) -o $(BIN_DIR)/DFA_Simulator 
 
 clean:
