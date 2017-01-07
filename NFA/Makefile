@@ -19,7 +19,10 @@ all: NFA_Simulator
 common: $(COMMON_OBJS) $(COMMON_DIR)/include/common.h
 	cd $(COMMON_DIR); make ; cd $(LWD)
 
-NFA_Simulator: $(SRC_DIR)/NFA.cpp $(INCLUDE_DIR)/NFA.h
+NFA_Simulator: $(BIN_DIR)/NFA_Simulator
+
+$(BIN_DIR)/NFA_Simulator: $(TEST_DIR)/NFA_Simulator.cpp $(SRC_DIR)/NFA.cpp $(INCLUDE_DIR)/NFA.h
+	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) $(TEST_DIR)/NFA_Simulator.cpp $(NFA_SRC) -o $(BIN_DIR)/NFA_Simulator 
 
 clean:

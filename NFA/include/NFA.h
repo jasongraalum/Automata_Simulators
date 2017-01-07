@@ -27,7 +27,7 @@ public:
 	NFA();
     std::string name;
     int loadNFA(std::string);
-    bool runNFA(std::string,unsigned int);
+    bool runNFA(std::string,unsigned int,int);
     unsigned int getStateIndexbyName(std::string);
     std::string getStateNamebyIndex(unsigned int);
     unsigned int getAlphaIndexbyName(std::string);
@@ -41,12 +41,20 @@ public:
     void printAcceptStates();
     void printTransitionFunction();
     std::vector<unsigned int> getNextStates(unsigned int, unsigned int);
+    std::vector<unsigned int> getEmptyTransitionStates(unsigned int);
     bool isAcceptedState(unsigned int);
+    void setEmptyAlphaIndex(unsigned int);
+    unsigned int getEmptyAlphaIndex();
+    void setNullStateIndex(unsigned int);
+    unsigned int getNullStateIndex();
+
 
 private:
     FSM_TYPE machine_type; // 0 - NFA, 1 - NNFA
     std::vector<std::string> alphabet;
+    unsigned int empty_alpha_index;
     std::vector<std::string> states;
+    unsigned int null_state_index;
     std::vector<unsigned int> accept_states; // Indexes to states vector
     unsigned int start_state_index;
     std::vector< std::vector< std::vector<unsigned int> > > transition_table;

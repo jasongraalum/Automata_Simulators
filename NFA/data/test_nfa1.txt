@@ -1,0 +1,11 @@
+Name: NFA_1 
+Alphabet: 0 1
+States: S0 S1 S2 S3 S4
+Start: S0
+Accept: S1 S3
+Transition_Table:
+() () (S1, S3)
+(S2) (S1) ()
+(S1) (S2) ()
+(S3) (S4) ()
+(S4) (S3) ()

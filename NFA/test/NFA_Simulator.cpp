@@ -10,7 +10,6 @@
 
 int main(int argc, const char * argv[]) {
 
-	unsigned int final_state;
 	std::string cmd_str = "aabaabaabaabaabaa";
 	NFA *dfa = new NFA();
 	std::string ifn;
@@ -29,10 +28,7 @@ int main(int argc, const char * argv[]) {
 	std::cout << "Enter the string to run: ";
 	std::cin >> cmd_str;
 
-	final_state = dfa->runNFA(cmd_str,dfa->getStartStateIndex());
-
-	std::cout << "Debug" << std::endl;
-	if(dfa->isAcceptedState(final_state))
+	if(dfa->runNFA(cmd_str,dfa->getStartStateIndex(),0))
 	{
 		std::cout << "String " << cmd_str << " accepted by the NFA." << std::endl;
 	}
