@@ -1,0 +1,13 @@
+Machine_Name: TM_1 
+Input_Alphabet: 0
+Tape_Alphabet: 0 x
+States: q1 q2 q3 q4 q5 qreject qaccept
+Start_State: q1
+Accept_State: qaccept
+Reject_State: qreject
+Transition_Table:
+(" ",R,q2) ("",R,qreject) ("",R,qreject)
+("x",R,q3) ("",R,q2)      ("",R,qaccept)
+("",R,q4)  ("",R,q3)      ("",L,q5)
+("x",R,q3) ("",R,q4)      ("",R,qreject)
+("",L,q5)  ("",L,q5)      ("",R,q2)

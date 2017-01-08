@@ -1,0 +1,10 @@
+Name: NFA_2 
+Alphabet: 0 1
+States: q1 q2 q3 q4
+Start: q1
+Accept: q4
+Transition_Table:
+(q1) (q1,q2) ()
+(q3) (q3) ()
+(q4) (q4) ()
+() () ()
