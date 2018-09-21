@@ -397,6 +397,10 @@ bool TM::runTM(std::string cmd_string)
     std::list<std::string> tape;
     std::vector<std::string> next_symbol_vector;
     std::string symbol;
+    std::string v, w;
+
+    v = "";
+    w = s;
 
     //
     // Write the command string onto the tape
@@ -469,6 +473,7 @@ bool TM::runTM(std::string cmd_string)
             next_state_name = s;
         }
 
+        std::cout << v << next_state_name << w << std::endl;
         std::cout << "Current Symbol = " << current_symbol << std::endl;
         this->printTape(tape);
 

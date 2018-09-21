@@ -25,7 +25,7 @@ enum FSM_TYPE
 class TM
 {
 public:
-	TM();
+    TM();
     std::string name;
     int loadTM(std::string);
     bool runTM(std::string);
@@ -56,12 +56,9 @@ private:
     FSM_TYPE machine_type; // 0 - TM, 1 - NTM
 
     std::vector<std::string> input_alphabet;
-
     std::vector<std::string> tape_alphabet;
-
     std::vector<std::string> states;
     unsigned int null_state_index;
-
     unsigned int start_state_index;
     unsigned int accept_state_index;
     unsigned int reject_state_index;

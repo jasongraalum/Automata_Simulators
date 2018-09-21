@@ -351,6 +351,9 @@ void NFA::printNFA()
 
 }
 
+//
+// Update this to be a correct eps function
+//
 std::vector<unsigned int> NFA::getEmptyTransitionStates(unsigned int state_index)
 {
     std::vector<unsigned int> state_vector;
